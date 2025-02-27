@@ -5,7 +5,7 @@ I am a computer science student at Austin Community College. While preparing for
 
 ## Installation
 I'm not sure why anyone would want to use this code, as the entire idea is to build one's own projects to learn. However, if you're interested:
-- Clone the repository using "git clone [https://github.com/JeevanMKJ/COSC-Quiz-Game]".
+- Clone the repository using git clone git@github.com:JeevanMKJ/COSC-Quiz-Game.git
 - If desired, you can change the question list. The current questions are from "Tony Gaddis - Starting Out with Python - Pearson".
 
 ## Usage
