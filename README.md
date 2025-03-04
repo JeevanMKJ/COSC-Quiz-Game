@@ -1,29 +1,74 @@
 # COSC Chapter Questions Quiz Game
 
 ## Description
-I am a computer science student at Austin Community College. While preparing for my first exam, I felt there could be a better way to review the multiple-choice questions from the chapters we were tested on. To address this, I developed a Python command-line program containing a list of 70 questions from the textbook.
+A Python command-line quiz application designed for computer science students at Austin Community College. This program allows students to test their knowledge through multiple-choice questions organized by modules from "Tony Gaddis - Starting Out with Python - Pearson".
+
+## Features
+- **Module Selection**: Choose specific chapters or test across all modules
+- **Customizable Quiz Length**: Select number of questions per session
+- **Review System**: Practice previously incorrect questions
+- **Random Questions**: Questions are randomly selected each time
+- **Progress Tracking**: View scores after each quiz session
 
 ## Installation
-I'm not sure why anyone would want to use this code, as the entire idea is to build one's own projects to learn. However, if you're interested:
-- Clone the repository using `git clone git@github.com:JeevanMKJ/COSC-Quiz-Game.git`
-- If desired, you can change the question list. The current questions are from "Tony Gaddis - Starting Out with Python - Pearson".
+1. Clone the repository:
+```bash
+git clone git@github.com:JeevanMKJ/COSC-Quiz-Game.git
+```
+
+2. Navigate to project directory:
+```bash
+cd COSC-Quiz-Game
+```
 
 ## Usage
-To run the program, execute "python3 cosc_quiz_game.py" in the command line. You will be prompted to enter the number of questions you want to answer. Enter a number between 1 and 70.
+1. Start the program:
+```bash
+python3 index.py
+```
 
-When answering questions, enter a, b, c, or d. After the specified number of questions has been asked, your score will be displayed. You will then be presented with three options:
-1. Play another set of questions.
-2. Review all questions answered incorrectly.
-3. Quit the game.
+2. Quiz Flow:
+   - Select a module or choose "All modules" (0)
+   - Enter desired number of questions
+   - Answer each question with 'a', 'b', 'c', or 'd'
+   - View your score
+   - Choose to:
+     1. Start new quiz
+     2. Review incorrect answers
+     3. Exit program
 
-- If you select option 1, the loop starts over.
-- If you select option 2, the incorrect questions will be asked again, and you will be presented with the same three options at the end.
-- If you select option 3, the game will quit.
+## Project Structure
+```
+COSC-Quiz-Game/
+├── index.py         # Main program entry point
+├── quiz_actions.py  # Core quiz functionality
+└── questions.py     # Question database
+```
 
-## Future
-I will likely build more features as I progress in my studies. Some potential enhancements include:
-- A user interface (UI).
-- Deployment on the web.
-- User accounts, login functionality, and the ability to track scores and questions.
-- Using MongoDB as a database.
-- Integrating Hugging Face to provide short, descriptive answers for all questions answered incorrectly.
+## Code Organization
+- `index.py`: Main program loop and user interaction
+- `quiz_actions.py`: Contains core functions:
+  - `get_module_selection()`: Module selection interface
+  - `get_num_questions()`: Question quantity selection
+  - `handle_quiz_session()`: Quiz execution logic
+  - `get_next_action()`: Post-quiz options
+- `questions.py`: Question database and module organization
+
+## Future Enhancements
+- [ ] Graphical user interface (GUI)
+- [ ] Update the dataset from a py to JSON or SQL
+- [ ] Web deployment
+- [ ] User authentication system
+- [ ] Score tracking and statistics
+- [ ] MongoDB integration
+- [ ] AI-powered explanations using Hugging Face
+
+## Contributing
+While this project is primarily for personal educational use, suggestions and improvements are welcome through issues or pull requests.
+
+## License
+[MIT License](https://opensource.org/licenses/MIT)
+
+## Author
+Jeevan Morgan Kress-Jones
+- GitHub: [@JeevanMKJ](https://github.com/JeevanMKJ)
