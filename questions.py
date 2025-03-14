@@ -420,7 +420,7 @@ initial_questions = [
         'module': 1
     },
     {
-        'question': 'Each repetition of a loop is known as a(n) __________.',
+        'question': 'Each repetition of a loop is known as a(n) __________ .',
         'options': ['a. cycle', 'b. revolution', 'c. orbit', 'd. iteration'],
         'answer': 'd',
         'answer_name': 'iteration',
@@ -462,7 +462,7 @@ initial_questions = [
         'module': 1
     },
     {
-        'question': 'GIGO stands for __________.',
+        'question': 'GIGO stands for __________ .',
         'options': ['a. great input, great output', 'b. garbage in, garbage out', 'c. GIGahertz Output',
                     'd. GIGabyte Operation'],
         'answer': 'b',
@@ -470,35 +470,35 @@ initial_questions = [
         'module': 1
     },
     {
-        'question': "The integrity of a program's output is only as good as the integrity of the program's ____________.",
+        'question': "The integrity of a program's output is only as good as the integrity of the program's ____________ .",
         'options': ['a. compiler', 'b. programming language', 'c. input', 'd. debugger'],
         'answer': 'c',
         'answer_name': 'input',
         'module': 1
     },
     {
-        'question': 'The input operation that appears just before a validation loop is known as the __________.',
+        'question': 'The input operation that appears just before a validation loop is known as the __________ .',
         'options': ['a. prevalidation read', 'b. primordial read', 'c. initialization read', 'd. priming read'],
         'answer': 'd',
         'answer_name': 'priming read',
         'module': 1
     },
     {
-        'question': 'Validation loops are also known as __________.',
+        'question': 'Validation loops are also known as __________ .',
         'options': ['a. error traps', 'b. doomsday loops', 'c. error avoidance loops', 'd. defensive loops'],
         'answer': 'a',
         'answer_name': 'error traps',
         'module': 1
     },
     {
-        'question': 'A group of statements that exist within a program for the purpose of performing a specific task is a(n) _______.',
+        'question': 'A group of statements that exist within a program for the purpose of performing a specific task is a(n) _______ .',
         'options': ['a. block', 'b. parameter', 'c. function', 'd. expression'],
         'answer': 'c',
         'answer_name': 'function',
         'module': 2
     },
     {
-        'question': 'A design technique that helps to reduce the duplication of code within a program and is a benefit of using functions is ________.',
+        'question': 'A design technique that helps to reduce the duplication of code within a program and is a benefit of using functions is ________ .',
         'options': ['a. code reuse', 'b. divide and conquer', 'c. debugging', 'd. facilitation of teamwork'],
         'answer': 'a',
         'answer_name': 'code reuse',
@@ -519,7 +519,7 @@ initial_questions = [
         'module': 2
     },
     {
-        'question': 'A design technique that programmers use to break down an algorithm into functions is known as ________.',
+        'question': 'A design technique that programmers use to break down an algorithm into functions is known as ________ .',
         'options': ['a. top-down design', 'b. code simplification', 'c. code refactoring', 'd. hierarchical subtasking'],
         'answer': 'a',
         'answer_name': 'top-down design',
@@ -568,7 +568,7 @@ initial_questions = [
         'module': 2
     },
     {
-        'question': 'A variable that is visible to every function in a program file is a ________.',
+        'question': 'A variable that is visible to every function in a program file is a ________ .',
         'options': ['a. local variable', 'b. universal variable', 'c. program-wide variable', 'd. global variable'],
         'answer': 'd',
         'answer_name': 'global variable',
@@ -635,6 +635,111 @@ initial_questions = [
         'options': ['a. derivative', 'b. factor', 'c. sqrt', 'd. differentiate'],
         'answer': 'c',
         'answer_name': 'sqrt',
+        'module': 2
+    },
+    {
+        'question': 'A file that data is written to is known as a(n) ________ .',
+        'options': ['a. input file', 'b. output file', 'c. sequential access file', 'd. binary file'],
+        'answer': 'b',
+        'answer_name': 'output file',
+        'module': 2
+    },
+    {
+        'question': 'A file that data is read from is known as a(n) ________ .',
+        'options': ['a. input file', 'b. output file', 'c. sequential access file', 'd. binary file'],
+        'answer': 'a',
+        'answer_name': 'input file',
+        'module': 2
+    },
+    {
+        'question': 'Before a file can be used by a program, it must be ________ .',
+        'options': ['a. formatted', 'b. encrypted', 'c. closed', 'd. opened'],
+        'answer': 'd',
+        'answer_name': 'opened',
+        'module': 2
+    },
+    {
+        'question': 'When a program is finished using a file, it should do this.',
+        'options': ['a. erase the file', 'b. open the file', 'c. close the file', 'd. encrypt the file'],
+        'answer': 'c',
+        'answer_name': 'close the file',
+        'module': 2
+    },
+        {
+        'question': 'The contents of this type of file can be viewed in an editor such as Notepad.',
+        'options': ['a. text file', 'b. binary file', 'c. English file', 'd. human-readable file'],
+        'answer': 'a',
+        'answer_name': 'text file',
+        'module': 2
+    },
+    {
+        'question': 'This type of file contains data that has not been converted to text.',
+        'options': ['a. text file', 'b. binary file', 'c. Unicode file', 'd. symbolic file'],
+        'answer': 'b',
+        'answer_name': 'binary file',
+        'module': 2
+    },
+    {
+        'question': 'When working with this type of file, you access its data from the beginning of the file to the end of the file.',
+        'options': ['a. ordered access', 'b. binary access', 'c. direct access', 'd. sequential access'],
+        'answer': 'd',
+        'answer_name': 'sequential access',
+        'module': 2
+    },
+    {
+        'question': 'When working with this type of file, you can jump directly to any piece of data in the file without reading the data that comes before it.',
+        'options': ['a. ordered access', 'b. binary access', 'c. direct access', 'd. sequential access'],
+        'answer': 'c',
+        'answer_name': 'direct access',
+        'module': 2
+    },
+    {
+        'question': 'This is a small "holding section" in memory that many systems write data to before writing the data to a file.',
+        'options': ['a. buffer', 'b. variable', 'c. virtual file', 'd. temporary file'],
+        'answer': 'a',
+        'answer_name': 'buffer',
+        'module': 2
+    },
+    {
+        'question': 'This marks the location of the next item that will be read from a file.',
+        'options': ['a. input position', 'b. delimiter', 'c. pointer', 'd. read position'],
+        'answer': 'd',
+        'answer_name': 'read position',
+        'module': 2
+    },
+    {
+        'question': 'When a file is opened in this mode, data will be written at the end of the file\'s existing contents.',
+        'options': ['a. output mode', 'b. append mode', 'c. backup mode', 'd. read-only mode'],
+        'answer': 'b',
+        'answer_name': 'append mode',
+        'module': 2
+    },
+    {
+        'question': 'This is a single piece of data within a record.',
+        'options': ['a. field', 'b. variable', 'c. delimiter', 'd. subrecord'],
+        'answer': 'a',
+        'answer_name': 'field',
+        'module': 2
+    },
+    {
+        'question': 'When an exception is generated, it is said to have been ________ .',
+        'options': ['a. built', 'b. raised', 'c. caught', 'd. killed'],
+        'answer': 'b',
+        'answer_name': 'raised',
+        'module': 2
+    },
+    {
+        'question': 'This is a section of code that gracefully responds to exceptions.',
+        'options': ['a. exception generator', 'b. exception manipulator', 'c. exception handler', 'd. exception monitor'],
+        'answer': 'c',
+        'answer_name': 'exception handler',
+        'module': 2
+    },
+    {
+        'question': 'You write this statement to respond to exceptions.',
+        'options': ['a. run/handle', 'b. try/except', 'c. try/handle', 'd. attempt/except'],
+        'answer': 'b',
+        'answer_name': 'try/except',
         'module': 2
     }
 ]

@@ -4,10 +4,8 @@ from quiz_actions import get_module_selection, get_num_questions, handle_quiz_se
 
 def main():
     questions = initial_questions.copy()
-    exit_game = False
 
-    while not exit_game:
-        
+    while True:
         filtered_questions = get_module_selection(questions)
         
         num_questions = get_num_questions(len(filtered_questions))
@@ -23,7 +21,7 @@ def main():
                 print("There are no incorrect questions to review.")
                 continue
         else:  
-            exit_game = True
+           break
 
     print("\nGreat study session!\nSee you next time.")
 
