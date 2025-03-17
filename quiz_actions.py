@@ -101,13 +101,15 @@ def get_next_action():
             return choice
         print("\nInvalid choice. Enter either 1, 2 or 3.")
 
+
 def get_explanations(questions):
     """Get the explanations for the questions that were answered incorrectly."""
     print("\nHere are the explanations for the questions that were answered incorrectly:")  
     for question in questions:
-        print(f"\n{question['question']} - Correct answer: {question['answer_name']}")
+        print(f"\n{question['question']}")
         print(f"\nExplanation: {question['explanation']}")
         print(" ")
 
     return questions
-    
+
+

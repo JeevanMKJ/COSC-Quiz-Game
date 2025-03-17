@@ -1,17 +1,21 @@
 import random
-from questions import initial_questions
+from utils.questions import initial_questions
 from game_state import GameState
+from question_manager import QuestionManager
 from quiz_actions import get_module_selection, get_num_questions, handle_quiz_session, get_next_action, get_explanations
+
 
 def main():
     game = GameState()
-    questions = initial_questions.copy()
+    question_manager = QuestionManager()
+    questions = question_manager.questions.copy()
 
     try:
         while game.running:
             print("\nWelcome to the Quiz Game!")
             print("Enter 'quit' at any time to exit.")
             print(" ")
+
             filtered_questions = get_module_selection(questions)
             
             num_questions = get_num_questions(len(filtered_questions))
@@ -19,7 +23,7 @@ def main():
             
             choice = get_next_action()
             if choice == '1':
-                questions = initial_questions.copy()
+                questions = question_manager.questions.copy()
             elif choice == '2':
                 if incorrect_questions:
                     questions = incorrect_questions.copy()
