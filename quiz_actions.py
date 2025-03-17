@@ -1,4 +1,7 @@
 import random
+from game_state import GameState
+
+game = GameState()
 
 def get_module_selection(questions):
     """Get the module selection from the user and return filtered questions."""
@@ -12,6 +15,9 @@ def get_module_selection(questions):
             print(f"{module}) Module {module}")
         
         choice = input(f"\nEnter module number (0-{max(modules)}): ")
+
+        if choice.lower() == 'quit':
+            game.quit_game()
         
         if choice.isdigit():
             choice = int(choice)
@@ -28,6 +34,10 @@ def get_num_questions(total_questions):
     """Get the number of questions the user wants to answer."""
     while True:
         num_questions_input = input(f"How many questions do you want (max {total_questions}): ")
+
+        if num_questions_input.lower() == 'quit':
+            game.quit_game()    
+
         if num_questions_input.isdigit():
             num_questions = int(num_questions_input)
             if 1 <= num_questions <= total_questions:
@@ -44,6 +54,10 @@ def ask_question(question_data, question_num):
         print(option)
 
     user_answer = input("Enter answer (a, b, c or d): ")
+
+    if user_answer.lower() == 'quit':
+        game.quit_game()
+
     is_correct = user_answer == question_data['answer']
     
     if is_correct:
@@ -80,7 +94,20 @@ def get_next_action():
         print("3) Exit the game?")
         choice = input("Enter (1, 2 or 3): ")
 
+        if choice.lower() == 'quit':
+            game.quit_game()
+
         if choice in ['1', '2', '3']:
             return choice
         print("\nInvalid choice. Enter either 1, 2 or 3.")
 
+def get_explanations(questions):
+    """Get the explanations for the questions that were answered incorrectly."""
+    print("\nHere are the explanations for the questions that were answered incorrectly:")  
+    for question in questions:
+        print(f"\n{question['question']} - Correct answer: {question['answer_name']}")
+        print(f"\nExplanation: {question['explanation']}")
+        print(" ")
+
+    return questions
+    
