@@ -1,4 +1,5 @@
 import random
+import matplotlib.pyplot as plt
 from game_state import GameState
 
 game = GameState()
@@ -82,34 +83,88 @@ def handle_quiz_session(questions, num_questions):
             incorrect_questions.append(question_data)
 
     print(f"Your total score is: {total_score}/{num_questions}")
-    return incorrect_questions
+    return incorrect_questions, total_score
 
 
 def get_next_action():
     """Get the user's choice for the next action."""
     while True:
-        print("\nWhat do you want to do next?")
-        print("1) Play again with new questions?")
-        print("2) Go through the questions that were answered wrong?")
-        print("3) Exit the game?")
-        choice = input("Enter (1, 2 or 3): ")
+        print("\nWhat would you like to do next?")
+        print("1) Start New Quiz")
+        print("2) Review Incorrect Questions Explanations")
+        print("3) Practice Incorrect Questions")
+        print("4) View Progress Graph")
+        print("5) Exit Game")
+        choice = input("Enter (1-5): ")
 
         if choice.lower() == 'quit':
             game.quit_game()
 
-        if choice in ['1', '2', '3']:
+        if choice in ['1', '2', '3', '4', '5']:
             return choice
-        print("\nInvalid choice. Enter either 1, 2 or 3.")
+        print("\nInvalid choice. Please enter a number between 1 and 5.")
 
 
 def get_explanations(questions):
-    """Get the explanations for the questions that were answered incorrectly."""
-    print("\nHere are the explanations for the questions that were answered incorrectly:")  
-    for question in questions:
-        print(f"\n{question['question']}")
+    """Display explanations for incorrectly answered questions."""
+    print("\n=== Explanations for Incorrect Answers ===")
+    for i, question in enumerate(questions, 1):
+        print(f"\nQuestion {i}: {question['question']}")
+        print("\nCorrect Answer:", end=" ")
+        for option in question['options']:
+            if option.startswith(f"{question['answer']}."):
+                print(option)
+                break
         print(f"\nExplanation: {question['explanation']}")
-        print(" ")
+        print("\n" + "-"*50)
 
-    return questions
 
+def save_scores(total_score, num_questions):
+
+    with open('scores.txt', 'a') as scores_file:
+        scores_file.write(f"{str(total_score)}\n")
+        scores_file.write(f"{str(num_questions)}\n")
+
+
+def display_progress():
+    scores_list = []
+
+    with open('scores.txt', 'r') as read_scores_file:
+        file_score = read_scores_file.readline()
+
+        while file_score != '':
+            file_question = read_scores_file.readline()
+
+            file_score = file_score.strip('\n')
+            file_question = file_question.strip('\n')
+
+            session_score = int(file_score) / int(file_question)
+            scores_list.append(session_score)
+
+            file_score = read_scores_file.readline()
+
+    return scores_list
+    
+
+def display_graph():
+    score_list = display_progress()
+    quiz_attempt = []
+
+    for i in range(1, len(score_list) + 1):
+        quiz_attempt.append(i)
+
+    x_coords = quiz_attempt
+    y_coords = score_list
+
+    plt.xlim(xmin = 1, xmax = len(score_list) + 1)
+    plt.ylim(ymin = 0, ymax = 1.5)
+
+    plt.plot(x_coords, y_coords)
+
+    plt.xlabel('Quiz Attempt')
+    plt.ylabel('Score (%)')
+    plt.title('Quiz Score Progress')
+    plt.grid(True)
+
+    plt.show()
 

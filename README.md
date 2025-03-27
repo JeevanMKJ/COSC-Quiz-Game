@@ -1,43 +1,75 @@
 # COSC Chapter Questions Quiz Game
 
 ## Description
+
 A Python command-line quiz application designed for computer science students at Austin Community College. This program allows students to test their knowledge through multiple-choice questions organized by modules from "Tony Gaddis - Starting Out with Python - Pearson".
 
 ## Features
+
 - **Module Selection**: Choose specific chapters or test across all modules
 - **Customizable Quiz Length**: Select number of questions per session
-- **Review System**: Practice previously incorrect questions
+- **Review System**: Review explanations and practice previously incorrect questions
 - **Random Questions**: Questions are randomly selected each time
-- **Progress Tracking**: View scores after each quiz session
+- **Progress Tracking**: View scores and performance graphs after each quiz session
+- **JSON Question Database**: Easily maintainable question format
+- **Quit Anytime**: Exit the game at any point using 'quit' command
+
+## Prerequisites
+
+Before running the game, ensure you have matplotlib installed:
+
+For Windows:
+
+```bash
+pip install matplotlib
+```
+
+For macOS:
+
+```bash
+sudo pip3 install matplotlib
+```
 
 ## Installation
+
 1. Clone the repository:
+
 ```bash
 git clone git@github.com:JeevanMKJ/COSC-Quiz-Game.git
 ```
 
 2. Navigate to project directory:
+
 ```bash
 cd COSC-Quiz-Game
 ```
 
 ## Usage
+
 1. Start the program:
+
 ```bash
 python3 index.py
 ```
 
-2. Quiz Flow:
+2. Main Menu Options:
+
+   1. Start New Quiz
+   2. Review Incorrect Questions Explanations
+   3. Practice Incorrect Questions
+   4. View Progress Graph
+   5. Exit Game
+
+3. Quiz Flow:
    - Select a module or choose "All modules" (0)
    - Enter desired number of questions
    - Answer each question with 'a', 'b', 'c', or 'd'
    - View your score
-   - Choose to:
-     1. Start new quiz
-     2. Review incorrect answers
-     3. Exit program
+   - Return to main menu
+   - Type 'quit' at any prompt to exit the game
 
 ## Project Structure
+
 ```
 COSC-Quiz-Game/
 ├── index.py         # Main program entry point
@@ -46,6 +78,7 @@ COSC-Quiz-Game/
 ```
 
 ## Code Organization
+
 - `index.py`: Main program loop and user interaction
 - `quiz_actions.py`: Contains core functions:
   - `get_module_selection()`: Module selection interface
@@ -55,6 +88,7 @@ COSC-Quiz-Game/
 - `questions.py`: Question database and module organization
 
 ## Future Enhancements
+
 - [ ] Graphical user interface (GUI)
 - [ ] Update the dataset from a py to JSON or SQL
 - [ ] Web deployment
@@ -64,11 +98,15 @@ COSC-Quiz-Game/
 - [ ] AI-powered explanations using Hugging Face
 
 ## Contributing
+
 While this project is primarily for personal educational use, suggestions and improvements are welcome through issues or pull requests.
 
 ## License
+
 [MIT License](https://opensource.org/licenses/MIT)
 
 ## Author
+
 Jeevan Morgan Kress-Jones
+
 - GitHub: [@JeevanMKJ](https://github.com/JeevanMKJ)
