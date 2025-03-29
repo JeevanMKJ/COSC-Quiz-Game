@@ -5,7 +5,6 @@ from question_manager import QuestionManager
 from quiz_actions import get_module_selection, get_num_questions, handle_quiz_session, get_next_action, get_explanations, save_scores, display_progress, display_graph
 
 def display_menu():
-    """Display the main menu options."""
     print("\n=== COSC Quiz Game Main Menu ===")
     print("1) Start New Quiz")
     print("2) Review Incorrect Questions Explanations")

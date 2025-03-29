@@ -127,44 +127,52 @@ def save_scores(total_score, num_questions):
 
 
 def display_progress():
-    scores_list = []
-
-    with open('scores.txt', 'r') as read_scores_file:
-        file_score = read_scores_file.readline()
-
-        while file_score != '':
-            file_question = read_scores_file.readline()
-
-            file_score = file_score.strip('\n')
-            file_question = file_question.strip('\n')
-
-            session_score = int(file_score) / int(file_question)
-            scores_list.append(session_score)
-
+    try:
+        scores_list = []
+        with open('scores.txt', 'r') as read_scores_file:
             file_score = read_scores_file.readline()
+
+            while file_score != '':
+                file_question = read_scores_file.readline()
+
+                file_score = file_score.strip('\n')
+                file_question = file_question.strip('\n')
+
+                session_score = int(file_score) / int(file_question)
+                scores_list.append(session_score)
+
+                file_score = read_scores_file.readline()
+
+    except FileNotFoundError:
+        print("No scores found. Please take a quiz first.")
+        return []
 
     return scores_list
     
 
 def display_graph():
-    score_list = display_progress()
-    quiz_attempt = []
+    try:
+        score_list = display_progress()
+        quiz_attempt = []
 
-    for i in range(1, len(score_list) + 1):
-        quiz_attempt.append(i)
+        for i in range(1, len(score_list) + 1):
+            quiz_attempt.append(i)
 
-    x_coords = quiz_attempt
-    y_coords = score_list
+        x_coords = quiz_attempt
+        y_coords = score_list
 
-    plt.xlim(xmin = 1, xmax = len(score_list) + 1)
-    plt.ylim(ymin = 0, ymax = 1.5)
+        plt.xlim(xmin = 1, xmax = len(score_list) + 1)
+        plt.ylim(ymin = 0, ymax = 1.5)
 
-    plt.plot(x_coords, y_coords)
+        plt.plot(x_coords, y_coords)
 
-    plt.xlabel('Quiz Attempt')
-    plt.ylabel('Score (%)')
-    plt.title('Quiz Score Progress')
-    plt.grid(True)
+        plt.xlabel('Quiz Attempt')
+        plt.ylabel('Score (%)')
+        plt.title('Quiz Score Progress')
+        plt.grid(True)
 
-    plt.show()
+        plt.show()
+    
+    except Exception as e:
+        print(f"Error displaying graph: No scores found. \nDetails: {e}")
 
